@@ -23,15 +23,15 @@ class DetailDokumentasi extends Model
         return $this->hasMany(DetailDokumentasi::class, 'id_detaildokumentasi','id');
     }
 
-    public function User(){
+    public function user(){
         return $this->belongsTo(User::class, 'id_user','id');
     }
 
-    public function Kegiatan(){
+    public function kegiatan(){
         return $this->belongsTo(Kegiatan::class, 'id_kegiatan','id');
     }
 
-    public function Dokumentasi(){
+    public function dokumentasi(){
         return $this->belongsTo(Dokumentasi::class, 'id_dokumentasi','id');
     }
 

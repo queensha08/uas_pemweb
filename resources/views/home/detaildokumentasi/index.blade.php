@@ -51,7 +51,11 @@
                                             <td>{{$e->keterangan}}</td>
                                             <td>
                                                 <a href="/detaildokumentasi/{{$e->id}}/edit" class="edit-link"><span class="fa fa-edit"></span></a>
-                                                <a href="/detaildokumentasi/{{$e->id}}/hapus" class="delete-link"><span class="fa fa-trash"></span></a>
+                                                <a href="#" 
+                                                class="delete-link btn-delete" 
+                                                data-url="/detaildokumentasi/{{$e->id}}/hapus">
+                                                <span class="fa fa-trash"></span>
+                                                </a>
                                                 <a href="{{ route('detaildokumentasi.print', ['id' => $e->id]) }}" class="print-link"><span class="fa fa-print"></span></a>
                                             </td>
                                         </tr>

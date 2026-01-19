@@ -128,6 +128,6 @@ class KegiatanController extends Controller
     {
         $kegiatan = Kegiatan::find($id);
         $kegiatan->delete();
-        return redirect('/kegiatan');
+        return redirect('/kegiatan')->with('success', 'Data berhasil dihapus');
     }
 }

@@ -114,17 +114,6 @@ class DokumentasiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function update(Request $request, $id)
-    // {
-    //     $dokumentasi = Dokumentasi::find($id);
-    //     $dokumentasi->update([
-    //         'namafolder' => $request->namafolder,
-    //         'link' => $request->link,
-    //         'photo' => $request->photo,
-    //         $request->except(['_token']),
-    //     ]);
-    //     return redirect('/dokumentasi');
-    // }
 
 
     public function update(Request $request, $id)
@@ -138,7 +127,7 @@ class DokumentasiController extends Controller
         $dokumentasi = Dokumentasi::findOrFail($id);
 
         // Update data namafolder dan link
-        $dokumentasi->namafolder = $validatedData['id_kegiatan'];
+        $dokumentasi->id_kegiatan = $validatedData['id_kegiatan'];
         $dokumentasi->link = $validatedData['link'];
 
         // Periksa apakah ada foto yang diunggah
@@ -173,6 +162,6 @@ class DokumentasiController extends Controller
     {
         $dokumentasi = Dokumentasi::find($id);
         $dokumentasi->delete();
-        return redirect('/dokumentasi');
+        return redirect('/dokumentasi')->with('success', 'Data berhasil dihapus');
     }
 }

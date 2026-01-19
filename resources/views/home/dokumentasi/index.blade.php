@@ -55,7 +55,11 @@
 
                                             <td>
                                                 <a href="/dokumentasi/{{$d->id}}/edit" class="edit-link"><span class="fa fa-edit"></span></a>
-                                                <a href="/dokumentasi/{{$d->id}}/hapus" class="delete-link"><span class="fa fa-trash"></span></a>
+                                                <a href="#" 
+                                                    class="delete-link btn-delete" 
+                                                    data-url="/dokumentasi/{{$d->id}}/hapus">
+                                                    <span class="fa fa-trash"></span>
+                                                </a>
                                             </td>
                                         </tr>
                                     @endforeach

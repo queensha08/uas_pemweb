@@ -119,7 +119,7 @@ class DetailDokumentasiController extends Controller
     {
         $detaildokumentasi = DetailDokumentasi::find($id);
         $detaildokumentasi->delete();
-        return redirect('/detaildokumentasi');
+        return redirect('/detaildokumentasi')->with('success', 'Data berhasil dihapus');
     }
 
     public function cetak()

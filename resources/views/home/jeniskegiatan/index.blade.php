@@ -41,8 +41,11 @@
                                             <td>{{$j->level}}</td>
                                             <td>
                                                 <a href="/jeniskegiatan/{{$j->id}}/edit" class="edit-link"><span class="fa fa-edit"></span></a>
-                                                <a href="/jeniskegiatan/{{$j->id}}/hapus" class="delete-link"><span class="fa fa-trash"></span></a>
-                                            </td>
+                                                <a href="#" 
+                                                    class="delete-link btn-delete" 
+                                                    data-url="/jeniskegiatan/{{$j->id}}/hapus">
+                                                    <span class="fa fa-trash"></span>
+                                                </a>
                                         </tr>
                                         @endforeach
                                     </tbody>

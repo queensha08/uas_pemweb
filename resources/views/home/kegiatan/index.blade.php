@@ -45,7 +45,11 @@
                                             <td>{{$k->kategoripeserta}}</td>
                                             <td>
                                                 <a href="/kegiatan/{{$k->id}}/edit" class="edit-link"><span class="fa fa-edit"></span></a>
-                                                <a href="/kegiatan/{{$k->id}}/hapus" class="delete-link"><span class="fa fa-trash"></span></a>
+                                                <a href="#" 
+                                                    class="delete-link btn-delete" 
+                                                    data-url="/kegiatan/{{$k->id}}/hapus">
+                                                    <span class="fa fa-trash"></span>
+                                                </a>
                                             </td>
                                         </tr>
                                         @endforeach

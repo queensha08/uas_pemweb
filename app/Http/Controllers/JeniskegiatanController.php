@@ -118,6 +118,6 @@ class JeniskegiatanController extends Controller
     {
         $jeniskegiatan = Jeniskegiatan::find($id);
         $jeniskegiatan->delete();
-        return redirect('/jeniskegiatan');
+        return redirect('/jeniskegiatan')->with('success', 'Data berhasil dihapus');
     }
 }
