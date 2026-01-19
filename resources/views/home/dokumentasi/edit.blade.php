@@ -18,8 +18,8 @@
                                   <div class="mb-3">
                                     <label for="" class="form-label">Nama Kegiatan</label>
                                     <select name="id_kegiatan" id="" class="form-control">
-                                        @foreach($kegiatan as $kegiatan)
-                                        <option value="{{$kegiatan->id}}">{{$kegiatan->namakegiatan}}</option>
+                                        @foreach($kegiatan as $items)
+                                        <option value="{{$items->id}}">{{$items->namakegiatan}}</option>
                                         @endforeach
                                     </select>
                                   </div>
