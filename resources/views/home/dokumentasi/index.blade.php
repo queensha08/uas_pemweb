@@ -44,13 +44,15 @@
                                             <td><a href="{{$d->link}}" target="_blank"><span class="fa fa-link"></span></a></td>
                                             <td>
                                                 @if ($d->photo)
-                                                    @foreach (json_decode($d->photo) as $image)
-                                                        <img src="{{ asset('storage/' . $image) }}" alt="Foto" style="max-width: 100px;">
+                                                    @foreach(json_decode($d->photo, true) as $image)
+                                                        <img src="{{ asset('storage/' . $image) }}" alt="Foto" style="max-width:100px; margin:2px;">
                                                     @endforeach
                                                 @else
                                                     No photo available
                                                 @endif
                                             </td>
+
+
                                             <td>
                                                 <a href="/dokumentasi/{{$d->id}}/edit" class="edit-link"><span class="fa fa-edit"></span></a>
                                                 <a href="/dokumentasi/{{$d->id}}/hapus" class="delete-link"><span class="fa fa-trash"></span></a>

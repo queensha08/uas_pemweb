@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 
 
+
 class DokumentasiController extends Controller
 {
     /**
@@ -91,7 +92,8 @@ class DokumentasiController extends Controller
     public function show($id)
     {
         $dokumentasi = Dokumentasi::find($id);
-        return view('home.dokumentasi.edit', compact(['dokumentasi']));
+        $kegiatan = Kegiatan::all();
+        return view('home.dokumentasi.edit', compact(['dokumentasi', 'kegiatan']));
     }
 
     /**
@@ -147,11 +149,10 @@ class DokumentasiController extends Controller
             // Simpan path foto baru
             $photoPaths = [];
             foreach ($request->file('photos') as $photo) {
-                $photoPath = $photo->store('photos', 'public');
-                $photoPaths[] = $photoPath;
+                $filename = time().'_'.$photo->getClientOriginalName();
+                $photo->storeAs('photos', $filename, 'public');
+                $photoPaths[] = 'photos/' . $filename;
             }
-            
-            // Simpan path foto baru dalam bentuk JSON
             $dokumentasi->photo = json_encode($photoPaths);
         }
 
